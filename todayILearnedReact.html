@@ -98,73 +98,73 @@ function ToDoList(){
     )
 }</p>
     <hr/>
-<p>  React-router-dom
+<p>  <h1>React-router-dom</h1>
 
-React-router 시작하기
+<h2>React-router 시작하기</h2>
 
 Npm i react-router-dom
-
+<br/>
 App.js
 Import {HashRouter,Route}from “react-router-dom”;
-
+<br/>
 Function App(){
 	return
  <HashRouter>
 	<Route path=“home/” component={Home}/>
-	<Route path=“/about” component={About}/>
-	//path와 component는 이름이 같을 필요는 없다.
+	<Route path=“/about” component={About}/><br/>
+	//path와 component는 이름이 같을 필요는 없다.<br/>
 </HashRouter>
 }
 
-//case1:
+//case1:<br/>
 Function App(){
 	return
  <HashRouter>
 	<Route path=“home/”>
 		<h1>Home</h1>
 	</Route>
-	<Route path=“home/intro”><h1>HomeIntro</h1></Route>
-	//home/intro 접속시 home과 homeintro 두 개 다 렌더링됨
-	<Route path=“/about”><h1>About</h1><Route/>
+	<Route path=“home/intro”><h1>HomeIntro</h1></Route><br/>
+	//home/intro 접속시 home과 homeintro 두 개 다 렌더링됨<br/>
+	<Route path=“/about”><h1>About</h1><Route/><br/>
 </HashRouter>
-}
-Solution of the case 1:
-<Route path =“/” exact={true} component={Home}>
-//정확하게 path가 일치하는 것만 렌더
+}<br/>
+Solution of the case 1:<br/>
+<Route path =“/” exact={true} component={Home}><br/>
+//정확하게 path가 일치하는 것만 렌더<br/>
 *버전업후에 HashRouter -> BrowserRouter, component->element
-Route를 Routes로 감싸줘야함
+Route를 Routes로 감싸줘야함<br/>
 
-페이지 이동을 위한 Navigation
+페이지 이동을 위한 Navigation<br/>
 
-Navigation.js
+Navigation.js<br/>
 
-Import {Link} from “react-router-dom”;
-Function Navigation(){
-	Return(
-		<div>
-			<Link to=“/“>Home</Link>
-			<Link to=“/about”>About</Link>
-		</div>	
+Import {Link} from “react-router-dom”;<br/>
+Function Navigation(){<br/>
+	Return(<br/>
+		<div><br/>
+			<Link to=“/“>Home</Link><br/>
+			<Link to=“/about”>About</Link><br/>
+		</div>	<br/>
 	)
 }
-
-App.js
+<br/>
+App.js<br/>
 …
-Import Navigation from “~~~”;
+Import Navigation from “~~~”;<br/>
 
 Function App(){
 	return
- <HashRouter>
-<Navigation/> // Link는 반드시 Routes안에 있어야 작동됨
-	<Route path=“home/”>
+ <HashRouter><br/>
+<Navigation/> // Link는 반드시 Routes안에 있어야 작동됨<br/>
+	<Route path=“home/”><br/>
 		<h1>Home</h1>
 	</Route>
-	<Route path=“home/intro”><h1>HomeIntro</h1></Route>
-	<Route path=“/about”><h1>About</h1><Route/>
-</HashRouter>
+	<Route path=“home/intro”><h1>HomeIntro</h1></Route><br/>
+	<Route path=“/about”><h1>About</h1><Route/><br/>
+</HashRouter><br/>
 }
 
-Routes 간에 props공유
+	 <h2>Routes 간에 props공유</h2>
 
 Function App(){
 	return
@@ -173,12 +173,12 @@ Function App(){
 		<h1>Home</h1>
 	</Route>
 	<Route path=“home/intro”><h1>HomeIntro</h1></Route>
-	<Route path={
-				{
-					pathname:”/about”,
-					state:{fromNavigation:true
-						}
-				}
+	<Route path={<br/>
+				{<br/>
+					pathname:”/about”,<br/>
+					state:{fromNavigation:true<br/>
+						}<br/>
+				}<br/>
 		}><h1>About</h1><Route/>
 </HashRouter>
 }
