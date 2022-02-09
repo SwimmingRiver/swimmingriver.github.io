@@ -184,6 +184,29 @@ Function App(){
 }
    </p>
    <hr/>
+	<h1>Recoil</h1>
+	<p>Recoil이 없이 개발을 하게 되면 component간에 state,props등을 가져오기가 굉장히 복잡해진다<br/>
+		(큰 규모의 개발을 안해봐서 지금까지 느낀바로는 필요성은 이거밖에 모르겠다)</p><br/>
+	<p>atom은 recoil 정의한다<br/>
+		ex) const isDarkAtom = atom({
+			key: 'isDarkState',
+			default:[],
+		})
+	</p>
+		
+	<p>atom 값을 얻으려 할 때는 useRecoilValue<br/>
+		ex)const isDark = useRecoilValue(isDarkAtom);<br/>
+		<br/>
+		useSetRecoil은 매개변수로 atom을 받고,atom을 변경하는 함수로 <br/>
+		ex) const setDarkAtom = useSetRecoilState(isDarkAtom);<br/>
+		<br/>
+		
+	<p>react hooks의 useState처럼 사용할수도 있다.<br/>
+		const [isDarkAtom,setValue]=useRecoilState(isDarkState);<br/>
+		//이렇게하면 값을 얻고,변환을 한번에 할 수도 있다.<br/>
+	</p>
+	<h3>예시는 웹 테마를 바꾸기를 위한props </h3>
+	</p>
 </body>
 
 </html>
