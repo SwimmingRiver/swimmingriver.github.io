@@ -228,9 +228,39 @@ enum categories{<br/>
 	"DONE":"DONE",	<br/>
 }
 이런식으로 값을 정해주면 정해진 값으로 저장된다<br/>
+		 
+		 
 	 </p>
-	 
-	 
+	
+	 <h1>Recoil</h1>
+	 <p>
+	 selector<br/>
+selector는 atom을 가져가서 output을 변형할 수 있다<br/>
+
+import {atom,selector} from "recoil";<br/>
+
+export const minuteState = atom({<br/>
+	key:"min",<br/>
+	default:0,<br/>
+})<br/>
+
+export const hourSelector =selector({<br/>
+	key:"hours",<br/>
+	get:({get})=>{<br/>
+	 return 111111; //get에서 get을 인자로 함수를 쓰면. selector값은 항상 return값	<br/>
+	}<br/>
+})<br/>
+
+//분을 시로 변환해주는 selector<br/>
+export const hourSelector =selector<number>({ // <number>형만 리턴<br/>
+	key:"hours",<br/>
+	get:({get})=>{<br/>
+	const mins = get(minuteState);<br/>
+	return mins / 60; <br/>
+	}
+})<br/>
+
+	 </p><br/>
 </body>
 
 </html>
