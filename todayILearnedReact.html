@@ -133,6 +133,15 @@ Solution of the case 1:<br/>
 //정확하게 path가 일치하는 것만 렌더<br/>
 *버전업후에 HashRouter -> BrowserRouter, component->element
 Route를 Routes로 감싸줘야함<br/>
+	<BrowserRouter><br/>
+	<Routes><br/>
+         <Route path="/"  element={<Home/>}/> // exact={true} 대신에 path="/*"를 쓴다<br/>
+         <Route path="/example"  element={<Example/>}/><br/>
+		</Routes><br/>
+	</BrowserRouter><br/>
+	
+	
+	<br/>
 
 페이지 이동을 위한 Navigation<br/>
 
@@ -162,8 +171,11 @@ Function App(){
 	<Route path=“home/intro”><h1>HomeIntro</h1></Route><br/>
 	<Route path=“/about”><h1>About</h1><Route/><br/>
 </HashRouter><br/>
-}
-
+}<br/>
+<Link>를 styled-components로 사용하려면
+const example = styled(Link)`~~~`; 이렇게 사용한다
+	 <br/>
+	 
 	 <h2>Routes 간에 props공유</h2>
 
 Function App(){
