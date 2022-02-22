@@ -285,6 +285,37 @@ export default name of component --> export default React.memo(name of component
 	</p><br/>
 	<h1>Ref</h1>
 	<p>react hooks 중에 하나로 html요소를 javascript로 가져와서 쓸 수 있다</p>
+	 <hr/>
+	 <p>
+	 <h1>animation을 추가해보자</h1>
+framer 라이브러리 설치 <br/>
+import {motion} from "framer-motion";<br/>
+
+기본 설정<br/>
+<motion.htmlTag></..><br/>
+
+styled-components사용<br/>
+const animationBox = styled(moton.div)`<br/>
+	...<br/>
+`;<br/>
+
+효과를 따로 state로 선언하여 사용하기<br/>
+const animation={
+	...
+}<br/>
+...<br/>
+<animationBox animaition의 props를 추가></...><br/>
+//감싸고 있는 태그의 요소들은 안에 포함된 태그에 자동으로 적용된다
+<parents variants={...}....><br/>
+	<child/><br/>
+	<child/><br/>
+	<child/><br/>
+</><br/><br/>
+
+while~ : 애니메이션 작동 중에 효과를 추가하거나 설정을 할 수 있다.<br/>
+*색깔 변경에서는 "black","blue"같은 string을 사용하면 애니메이션 적용이 안됨<br/>
+rgb,rgba같이 정수형을 사용해야한다.<br/>
+	 </p><br/>
 </body>
 
 </html>
