@@ -316,6 +316,26 @@ while~ : 애니메이션 작동 중에 효과를 추가하거나 설정을 할 �
 *색깔 변경에서는 "black","blue"같은 string을 사용하면 애니메이션 적용이 안됨<br/>
 rgb,rgba같이 정수형을 사용해야한다.<br/>
 	 </p><br/>
+	 <hr/>
+	 <h1> framer 2</h1>
+<p>
+dragSnapToOrigin 은 drag후에도 시작 지점으로 돌아옴<br/>
+
+useMotionValue: 움직인 이동 값을 알 수 있다. 하지만 react의 state에는 해당되지않아서
+값이 변해도 렌더링 되지않는다.//<br/>
+이동되는 값을 알고 싶을 때는 useEffect를 활용하자<br/>
+
+기본 reactJs 에서는 컴포넌트가 사라질때 애니메이션을 사용할 수 없다.<br/>
+그래서 AnimatePresenece 를 사용한다.
+<AnimatePresense><br/>
+	<Box
+		<br/>//animation효과를 써준다
+		<br/>initial
+		<br/>animate
+	<br/>	exit
+		<br/>/><br/>
+</AnimatePresense>
+</p>	 
 </body>
 
 </html>
