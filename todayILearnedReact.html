@@ -336,6 +336,14 @@ useMotionValue: 움직인 이동 값을 알 수 있다. 하지만 react의 state
 		<br/>/><br/>
 </AnimatePresense>
 </p>	 
+	 <hr/>
+	 <h2>framer로 slider 만들기</h2>
+	 <p>
+	 	개념은 array를 만들어서 배열요소에 각각 state를 부여해서 다음과 이전 버튼을 눌러 <br/>
+해당 state만 표시하게 한다 이전 요소들은 좌표 -/+를해서 사라지는 애니메이션을 추가한다<br/>
+*하지만 이렇게 하면 다음,이전 버튼이 같은 애니메이션을 갖게된다. 그래서 custom을 
+해당  tag에 부여하여 initial,exit에 boolean값을 전환하는 함수를 넣어서 차이를 둔다<br/>
+	 </p>
 </body>
 
 </html>
