@@ -344,6 +344,21 @@ useMotionValue: 움직인 이동 값을 알 수 있다. 하지만 react의 state
 *하지만 이렇게 하면 다음,이전 버튼이 같은 애니메이션을 갖게된다. 그래서 custom을 
 해당  tag에 부여하여 initial,exit에 boolean값을 전환하는 함수를 넣어서 차이를 둔다<br/>
 	 </p>
+	 <hr/>
+	 <h1>CoinTracker</h1>
+	 <p>
+	 <h2>복습하는 중 useParams,useLocation에 대한 이해가 안됨 (확인요망)</h2>
+		 
+		 useEffect에서<br/>
+		 useEffect(()=>{<br/>
+		 	function()() 이렇게 되면 이 함수는 바로 작동됨<br/>
+		 },[])<br/>
+		 ex)<br/>
+			useEffect(()=>{<br/>
+				(async()=>{
+				const response = await fetch("Api Link");<br/>
+				const json = await response.json();}()),[])<br/>
+	 </p>
 </body>
 
 </html>
