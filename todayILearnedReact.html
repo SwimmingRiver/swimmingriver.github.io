@@ -343,6 +343,9 @@ useMotionValue: 움직인 이동 값을 알 수 있다. 하지만 react의 state
 해당 state만 표시하게 한다 이전 요소들은 좌표 -/+를해서 사라지는 애니메이션을 추가한다<br/>
 *하지만 이렇게 하면 다음,이전 버튼이 같은 애니메이션을 갖게된다. 그래서 custom을 
 해당  tag에 부여하여 initial,exit에 boolean값을 전환하는 함수를 넣어서 차이를 둔다<br/>
+	 <h4>*슬라이드를 만들면 빠르게 이동하면 마지막 부분과 첫부분으로 돌아갈때 버벅이는 현상이 생긴다</h4>
+	 	<AnimatePresence onExitComplete={}> //AnimatePresence에 있는 prop인 onExitComplete를 이용하면 해결 할 수 있다.<br/>
+		 작동이 끝났는지 확인하는 boolean값을 갖는 state를 만들고, boolean값을 바꾸는 toggle함수를 만들어  onExitComplete에 넣으면 해결할 수 있다.<br/>
 	 </p>
 	 <hr/>
 	 <h1>CoinTracker</h1>
