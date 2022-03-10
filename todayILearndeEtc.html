@@ -104,6 +104,59 @@ class Person{<br/>
 class Student extends Person{<br/>
 //Person class 상속<br/>
 }
+	 
     </p>
+	    <hr/>
+	       <h2>비동기</h2>
+	  <p>
+javascript는 synchoronous 코드의 순서대로 작동함<br/>
+Hoisting: var, function 선언들이 자동적으로 작동순서의 상위로 정해짐<br/>
+asynchoronus는 비동기적으로 언제 코드 작동할지 모름?<br/>
+ex) setTimeout(func(){},1000);//1초뒤에 function 출력<br/>
+
+Callback도 sync/async로 나눠짐<br/>
+
+Promise<br/>
+
+Js에서 비동기 제어를 위한 object<br/>
+중점:상태,제공자와 사용자의 차이점 이해<br/>
+상태: 수행중(pending)->완료(fulfilled),실패(rejected)
+제공자(producer)와 사용자(consumer)<br/>
+
+Producer 관점: 새로운 promise를 만들 때부터 함수가 작동한다.<br/>
+예를 들면, promise안에 서버와 통신함수를 넣었다면 그 순간부터 서버와 통신을 하기위한 작업을 한다.<br/>
+
+Consumer 관점:then,catch,finally<br/>
+Ex) promise<br/>
+	.then((value)=>console.log(value))//promise가 정상작동하여 넘겨준 값을 출력	<br/>	
+.catch(error=>{
+							console.log(error);
+							})//실패시 에러 출력<br/>
+						.finally(()=>{<br/>
+								console.log(“finally”);<br/>
+							})//	작동의 성공과 실패 여부와 
+								상관없이 최종 출력 되는 값<br/>
+
+Promise Chaining<br/>
+
+
+Async/await<br/>
+promise를 좀 더 간단하게 쓸 수 있게 한 형식(?)<br/>
+//경우에 따라 async와 promise 둘 중 하나가  더 적합함<br/>
+함수명 앞에 async를 붙이면 promise로 사용할 수 있음<br/>
+
+Await <br/>
+await 2개가 함께있을때 2개가 동기적으로 작동된다 <br/>
+출력까지 2초가 걸리는 함수가 2개가 있으면 결과가 나오는데 4초가 걸린다<br/>
+=>
+Promise.all([])을 사용한테 괄호안에 배열형태로 promise들을 전달하면 <br/>
+promise들을 병렬적으로 호출한다.<br/>
+
+Promise.race([])는 .all과 같이 배열로 promise들을 받고 그 중에서 가장 빨리 처리되는 하나만
+호출한다
+<br/>
+ 
+
+	  </p>
   </body>
 </html>
